@@ -8,8 +8,8 @@
 </ul>
 <div id="d"></div>
 <script>
-var P={"A-1042":["Test Case Alpha","+1-555-0101","Confirm attendance; collect insurance member ID"],"A-1043":["Test Case Beta","+1-555-0102","Reschedule pending"],"A-1044":["Test Case Gamma","+1-555-0103","Confirm attendance"]};
+var P={"A-1042":["Test Case Alpha","+1-917-391-0832","Confirm attendance; collect insurance member ID"],"A-1043":["Test Case Beta","+1-917-391-0832","Reschedule pending"],"A-1044":["Test Case Gamma","+1-917-391-0832","Confirm attendance"]};
 var d=document.getElementById("d");
-function r(){var h=location.hash.slice(1);if(!P[h])return;var p=P[h];d.innerHTML="<h2>Patient detail - "+h+"</h2><p>Name: "+p[0]+"</p><p>Phone (fake): "+p[1]+"</p><p>Notes: "+p[2]+"</p><p>Insurance eligibility: Unknown</p><button onclick=\"d.insertAdjacentHTML('beforeend','<p>SIMULATED CALL to "+h+" at '+new Date().toISOString()+' - no real call</p>')\">Simulate call to patient</button><p><a href=\"#\">Back to board</a></p>"}
+function r(){var h=location.hash.slice(1);if(!P[h])return;var p=P[h];d.innerHTML="<h2>Patient detail - "+h+"</h2><p>Name: "+p[0]+"</p><p>Phone (REAL QA test receiver - answers for call verification): "+p[1]+"</p><p>Notes: "+p[2]+"</p><p>Insurance eligibility: Unknown</p><button onclick=\"d.insertAdjacentHTML('beforeend','<p>SIMULATED CALL to "+h+" at '+new Date().toISOString()+' - no real call</p>')\">Simulate call to patient</button><p><a href=\"#\">Back to board</a></p>"}
 addEventListener("hashchange",r);r();
 </script>
