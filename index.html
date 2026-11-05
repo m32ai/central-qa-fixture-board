@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8"><title>Demo Clinic QA Fixture</title>
+<h1>Demo Clinic - Today's Appointments (SYNTHETIC QA FIXTURE - fake data only)</h1>
+<p>Board status: Normal - updated 14:40</p>
+<ul>
+<li><a href="#A-1042">A-1042</a> Test Case Alpha - 10:30 AM - <b>Scheduled</b></li>
+<li><a href="#A-1043">A-1043</a> Test Case Beta - 11:00 AM - <b>Scheduled</b></li>
+<li><a href="#A-1044">A-1044</a> Test Case Gamma - 11:30 AM - <b>Scheduled</b></li>
+</ul>
+<div id="d"></div>
+<script>
+var P={"A-1042":["Test Case Alpha","+1-555-0101","Confirm attendance; collect insurance member ID"],"A-1043":["Test Case Beta","+1-555-0102","Reschedule pending"],"A-1044":["Test Case Gamma","+1-555-0103","Confirm attendance"]};
+var d=document.getElementById("d");
+function r(){var h=location.hash.slice(1);if(!P[h])return;var p=P[h];d.innerHTML="<h2>Patient detail - "+h+"</h2><p>Name: "+p[0]+"</p><p>Phone (fake): "+p[1]+"</p><p>Notes: "+p[2]+"</p><p>Insurance eligibility: Unknown</p><button onclick=\"d.insertAdjacentHTML('beforeend','<p>SIMULATED CALL to "+h+" at '+new Date().toISOString()+' - no real call</p>')\">Simulate call to patient</button><p><a href=\"#\">Back to board</a></p>"}
+addEventListener("hashchange",r);r();
+</script>
